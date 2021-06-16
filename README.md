@@ -9,7 +9,7 @@
 
 # 安装方法
 ## GitHub安装
-`go get -u github.com/Wangsu-Cloud-Storage/wcs-go-sdk-rest-v2/wos`
+`go get -u github.com/Wangsu-Cloud-Storage/wcs-go-sdk-v2/wos`
 
 ## 初始化wos客户端
 
