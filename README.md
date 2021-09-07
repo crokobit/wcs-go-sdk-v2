@@ -22,7 +22,7 @@ var ak = "*** Provide your Access Key ***"
 var sk = "*** Provide your Secret Key ***"
 var endpoint = "https://your-endpoint"
  
-wosClient, err := wos.New(ak, sk, endpoint)
+wosClient, err := wos.New(ak, sk, endpoint, wos.WithRegion("your-region"))
 if err == nil {
     // 使用wosClient访问wos
     // ...
@@ -55,6 +55,7 @@ wosClient, err := wos.New(ak, sk, endpoint, wos.WithHeaderTimeout(30))
 | WithHttpTransport(transport *http.Transport)	| 配置自定义的Transport。	| 默认
 | WithRequestContext(ctx context.Context)	| 配置每次HTTP请求的上下文。	| N/A
 | WithMaxRedirectCount(maxRedirectCount int)	| 配置HTTP/HTTPS请求重定向的最大次数。默认为3次。	| 1，5
+| WithRegion(region string) | 配置S3所在region | default-region
 
 # 快速使用
 ## 获取存储空间列表（List Bucket）
