@@ -227,9 +227,9 @@ func (conf *config) prepareConfig() {
 		conf.maxRedirectCount = DEFAULT_MAX_REDIRECT_COUNT
 	}
 
-	if conf.pathStyle && conf.signature == SignatureWos {
-		conf.signature = SignatureV2
-	}
+	//if conf.pathStyle && conf.signature == SignatureWos {
+	//	conf.signature = SignatureV2
+	//}
 }
 
 func (conf *config) initConfigWithDefault() error {

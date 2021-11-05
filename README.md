@@ -2,7 +2,7 @@
 -此 Go SDK 基于网宿云存储(WCS)官方API构建
 
 # 版本
-`Current version: v1.0.0`
+`Current version: v1.0.1`
 
 # 运行环境
 `Go 1.7及以上。`
@@ -56,6 +56,7 @@ wosClient, err := wos.New(ak, sk, endpoint, wos.WithHeaderTimeout(30))
 | WithRequestContext(ctx context.Context)	| 配置每次HTTP请求的上下文。	| N/A
 | WithMaxRedirectCount(maxRedirectCount int)	| 配置HTTP/HTTPS请求重定向的最大次数。默认为3次。	| 1，5
 | WithRegion(region string) | 配置S3所在region | default-region
+| WithPathStyle(pathStyle boolean)| 是否使用路径模式,关闭时使用使用bucketName.endpoint格式URL访问服务；开启时使用endpoint/bucketName格式URL访问服务。默认关闭|默认
 
 # 快速使用
 ## 获取存储空间列表（List Bucket）
@@ -96,7 +97,7 @@ if err == nil {
         fmt.Printf("Content[%d]-ETag:%s, Key:%s, LastModified:%s, Size:%d, StorageClass:%s\n",
             index, val.ETag, val.Key, val.LastModified, val.Size, val.StorageClass)
     }
-}
+}wosSdkVersion
 ```
 
 ## 上传文件（Put Object）
